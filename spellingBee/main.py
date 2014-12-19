@@ -1,26 +1,35 @@
 #!/usr/bin/env python
+'''
+  Author: Dawson Botsford
+  Purpose: Fork, edit, and pull request conservative
+  spelling suggestions from a GitHub repo's readme
+  Date: Fri Dec 19, 2014
+
+'''
 
 import re
 import json 
 import enchant
 import urllib2
 
-print "These are the contents in your README of interest:\n"
-print urllib2.urlopen("https://raw.githubusercontent.com/dawsonbotsford/mispell/master/README.md").read()
-
-f = open('words.json', 'rw')
-print json.loads(f.read())[0]
-
+wordDict = {}
 checker = enchant.Dict("en_US")
-myString = "Tis is a rpository wher I purposly hav mispelled sevral importat wordss!"
+with open("words.txt") as f:
+  for line in f:
+    (key, value) = line.split("->")
+    wordDict[key] = value.rstrip()
+
+print "These are the contents in your README of interest:\n"
+myString = urllib2.urlopen("https://raw.githubusercontent.com/dawsonbotsford/mispell/master/README.md").read()
+
 print myString
-#myString = myString.replace(" rpository ", " repository ")
 splitUp = re.compile('\w+').findall(myString)
 
 for word in splitUp:
   if (not checker.check(word)):
     #print word, " is wrong. How about ", checker.suggest(word)[0], "?"
-    #if word.lower 
-    myString = re.sub(word, checker.suggest(word)[0], myString)
+    #Only replace if the replacement is found within words.txt
+    if (word in wordDict):
+      myString = re.sub(word, wordDict[word], myString)
  
 print myString 
