@@ -8,7 +8,6 @@
 '''
 
 import re
-import json 
 import enchant
 import urllib2
 
