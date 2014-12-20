@@ -10,16 +10,29 @@
 import re
 import enchant
 import urllib2
+from github import Github
+import base64
 
 wordDict = {}
 checker = enchant.Dict("en_US")
+
+#Create Github object
+fp = open("../keys.txt")
+USERNAME = fp.readline().rstrip() # put your github username here.
+PASSWORD = fp.readline().rstrip() # put your github password here.
+obj = Github(USERNAME, PASSWORD)
+
+myrepo = obj.get_user().get_repo("mispell")
+myfork = obj.get_user().create_fork(myrepo)
+myString = base64.standard_b64decode(myfork.get_readme().content)
+
 with open("words.txt") as f:
   for line in f:
     (key, value) = line.split("->")
     wordDict[key] = value.rstrip()
 
 print "These are the contents in your README of interest:\n"
-myString = urllib2.urlopen("https://raw.githubusercontent.com/dawsonbotsford/mispell/master/README.md").read()
+#myString = urllib2.urlopen("https://raw.githubusercontent.com/dawsonbotsford/mispell/master/README.md").read()
 
 print myString
 splitUp = re.compile('\w+').findall(myString)
