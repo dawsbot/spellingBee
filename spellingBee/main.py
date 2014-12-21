@@ -22,6 +22,7 @@ USERNAME = fp.readline().rstrip() # put your github username here.
 PASSWORD = fp.readline().rstrip() # put your github password here.
 obj = Github(USERNAME, PASSWORD)
 
+#Fork the repo of interest
 myrepo = obj.get_user().get_repo("mispell")
 myfork = obj.get_user().create_fork(myrepo)
 myString = base64.standard_b64decode(myfork.get_readme().content)
