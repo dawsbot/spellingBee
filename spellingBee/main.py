@@ -64,28 +64,7 @@ f = open(target_fork.readme().name, 'w')
 f.write(myString)
 f.close()
 
-'''
-bashCommand = "git add -A && git status"
-process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-process.wait()
-'''
 bashCommand = "git add -A && git status"
 process = subprocess.call("../spellingBee/spellingBee/gitItAll.sh", shell=True)
 
-'''
-bashCommand = "git commit -m \"Spelling correction automated from Dawson's Spelling Bee\""
-print bashCommand
-process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-process.wait()
-
-
-bashCommand = "git push"
-process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-process.wait()
-'''
-'''
-bashCommand = "echo \"" + myString + "\" > " + target_fork.readme().name
-process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-process.wait()
-print bashCommand
-'''
+target_repo.create_pull("Spelling Correction", "master", "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If it's correct star the repo, if it's wrong, report an issue please!")
