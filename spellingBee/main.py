@@ -8,10 +8,10 @@
 '''
 
 import re
+import os
+import subprocess
 import enchant
-import urllib2
-from github import Github
-import base64
+import github3
 
 wordDict = {}
 checker = enchant.Dict("en_US")
@@ -20,20 +20,20 @@ checker = enchant.Dict("en_US")
 fp = open("../keys.txt")
 USERNAME = fp.readline().rstrip() # put your github username here.
 PASSWORD = fp.readline().rstrip() # put your github password here.
-obj = Github(USERNAME, PASSWORD)
+g = github3.login(USERNAME, PASSWORD)
 
 #Fork the repo of interest
-myrepo = obj.get_user().get_repo("mispell")
-myfork = obj.get_user().create_fork(myrepo)
-myString = base64.standard_b64decode(myfork.get_readme().content)
+target_repo = g.repository('alexwalling', 'ChainLink')
+target_fork = target_repo.create_fork()
+myString = target_fork.readme().decoded
 
+#Fill replacement dictionary from file
 with open("words.txt") as f:
   for line in f:
     (key, value) = line.split("->")
     wordDict[key] = value.rstrip()
 
 print "These are the contents in your README of interest:\n"
-#myString = urllib2.urlopen("https://raw.githubusercontent.com/dawsonbotsford/mispell/master/README.md").read()
 
 print myString
 splitUp = re.compile('\w+').findall(myString)
@@ -46,3 +46,9 @@ for word in splitUp:
       myString = re.sub(word, wordDict[word], myString)
  
 print myString 
+
+clone_url = target_fork.clone_url
+os.chdir("../..")
+bashCommand = "git clone " + clone_url
+print bashCommand
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
