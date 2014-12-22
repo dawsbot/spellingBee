@@ -595,6 +595,8 @@ biginning->beginning
 bilateraly->bilaterally
 billingualism->bilingualism
 binominal->binomial
+bitCoin->Bitcoin
+BitCoin->Bitcoin
 bizzare->bizarre
 blaim->blame
 blaimed->blamed
