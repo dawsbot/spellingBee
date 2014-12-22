@@ -22,8 +22,10 @@ USERNAME = fp.readline().rstrip() # put your github username here.
 PASSWORD = fp.readline().rstrip() # put your github password here.
 g = github3.login(USERNAME, PASSWORD)
 
-#Fork the repo of interest
-target_repo = g.repository('alexwalling', 'ChainLink')
+repo_name = 'ChainLink'
+
+#Fork the repo of interest into github account
+target_repo = g.repository('alexwalling', repo_name)
 target_fork = target_repo.create_fork()
 myString = target_fork.readme().decoded
 
@@ -47,8 +49,43 @@ for word in splitUp:
  
 print myString 
 
+#Clone the target repo locally
 clone_url = target_fork.clone_url
 os.chdir("../..")
 bashCommand = "git clone " + clone_url
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+process.wait()
+
+print bashCommand
+
+#Put new README text in place of old
+os.chdir(target_fork.name)
+f = open(target_fork.readme().name, 'w')
+f.write(myString)
+f.close()
+
+'''
+bashCommand = "git add -A && git status"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+process.wait()
+'''
+bashCommand = "git add -A && git status"
+process = subprocess.call("../spellingBee/spellingBee/gitItAll.sh", shell=True)
+
+'''
+bashCommand = "git commit -m \"Spelling correction automated from Dawson's Spelling Bee\""
 print bashCommand
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+process.wait()
+
+
+bashCommand = "git push"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+process.wait()
+'''
+'''
+bashCommand = "echo \"" + myString + "\" > " + target_fork.readme().name
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+process.wait()
+print bashCommand
+'''
