@@ -4259,3 +4259,14 @@ youself->yourself
 ytou->you
 yuo->you
 zeebra->zebra
+hav->have
+bitcoin->Bitcoin
+http->HTTP
+bitfinex->Bitfinex
+deveopment->development
+BitFinex->Bitfinex
+atleast->at least
+mongodb->MongoDB
+github->Github
+d3->D3
+hackbeanpot->HackBeanpot
