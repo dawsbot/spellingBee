@@ -17,7 +17,7 @@ import github3
 wordDict = {}
 ignoreDict = {}
 checker = enchant.Dict("en_US")
-usage = "USAGE: ./main.py [target_user] [target_repo]"
+usage = "ERROR, INCORRECT USAGE: ./main.py [target_user] [target_repo]"
 
 #Create Github object
 keys_file = open("../keys.txt")
@@ -26,14 +26,18 @@ PASSWORD = keys_file.readline().rstrip() # put your github password here.
 g = github3.login(USERNAME, PASSWORD)
 
 if (len(sys.argv) != 3):
-	print usage
+  print usage
+  sys.exit()
+  
 target_user = sys.argv[1]
 repo_name = sys.argv[2] 
 
 #Fork the repo of interest into github account
 target_repo = g.repository(target_user, repo_name)
-target_fork = target_repo.create_fork()
-myString = target_fork.readme().decoded
+#target_fork = target_repo.create_fork()
+
+oldText = target_repo.readme().decoded
+#myString = target_fork.readme().decoded
 
 #Fill replacement dictionary from file
 with open("../words/words.txt") as f:
@@ -48,8 +52,9 @@ with open("../words/ignore.txt") as f:
 
 print "These are the contents in your README of interest:\n"
 
-print myString
-splitUp = re.compile('\w+').findall(myString)
+print oldText
+newText = oldText #Create duplicate where corrections will be made
+splitUp = re.compile('\w+').findall(oldText)
 
 for word in splitUp:
   if (not checker.check(word)):
@@ -59,7 +64,7 @@ for word in splitUp:
       continue
     #Only replace if the replacement is mapped within words.txt
     if (word in wordDict):
-      myString = re.sub(word, wordDict[word], myString)
+      newText = re.sub(word, wordDict[word], newText)
     else: #Allow user to input new word map
       solution = raw_input("\n" + word + " unrecognized.\n1. i == add to ignore\n2. [word] == replacement for new mapping\n3. \'\' == none: ")
       if (solution == '' or solution == ' '): #user does not want this mapped
@@ -70,11 +75,15 @@ for word in splitUp:
       else: #user wants to map new correction
         with open('../words/words.txt','a') as f: f.write(word + "->" + solution + "\n")
         wordDict[word] = solution
-        myString = re.sub(word, wordDict[word], myString)
+        newText = re.sub(word, wordDict[word], newText)
         
-print "Corrected version: \n", myString 
+print "Corrected version: \n", newText 
+if (oldText == newText):
+  print "\nThere were no changes to be made!" 
+  sys.exit()
 
 #Clone the target repo locally
+target_fork = target_repo.create_fork()
 clone_url = target_fork.clone_url
 os.chdir("../..")
 bashCommand = "git clone " + clone_url
@@ -84,7 +93,7 @@ process.wait()
 #Put new README text in place of old
 os.chdir(target_fork.name)
 f = open(target_fork.readme().name, 'w')
-f.write(myString)
+f.write(newText)
 f.close()
 
 process = subprocess.call("../spellingBee/spellingBee/gitItAll.sh", shell=True)
