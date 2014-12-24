@@ -4270,3 +4270,9 @@ mongodb->MongoDB
 github->Github
 d3->D3
 hackbeanpot->HackBeanpot
+spellchecking->spell checking
+spellchecker->spell checker
+hackathon->Hackathon
+hackcu->HackCU
+infront->in front
+buildling->building
