@@ -25,11 +25,9 @@ Celcius->Celsius
 Champange->Champagne
 Cincinatti->Cincinnati
 Cincinnatti->Cincinnati
-Coca Cola->Coca-Cola
 Conneticut->Connecticut
 D-BUS->D-Bus
 Dardenelles->Dardanelles
-Debian-Edu->Debian Edu
 Docbook->DocBook
 Dravadian->Dravidian
 EMacs->Emacs
@@ -51,6 +49,9 @@ Galations->Galatians
 Gameboy->Game Boy
 Gconf->GConf
 Ghandi->Gandhi
+GitHub->GitHub
+GitHub->Github
+Github->GitHub
 Gnome->GNOME
 Gnome-VFS->GnomeVFS
 Gnome-Vfs->GnomeVFS
@@ -1879,7 +1880,8 @@ geometrician->geometer
 geometricians->geometers
 gerat->great
 german->German
-github->Github
+gitHub->GitHub
+github->GitHub
 glight->flight
 gnawwed->gnawed
 gnome->GNOME
@@ -3932,7 +3934,6 @@ tenacles->tentacles
 tendacy->tendency
 tendancies->tendencies
 tendancy->tendency
-tennisplayer->tennis player
 tepmorarily->temporarily
 terrestial->terrestrial
 terriories->territories
