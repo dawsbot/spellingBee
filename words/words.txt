@@ -49,8 +49,6 @@ Galations->Galatians
 Gameboy->Game Boy
 Gconf->GConf
 Ghandi->Gandhi
-GitHub->GitHub
-GitHub->Github
 Github->GitHub
 Gnome->GNOME
 Gnome-VFS->GnomeVFS
@@ -1881,7 +1879,6 @@ geometricians->geometers
 gerat->great
 german->German
 gitHub->GitHub
-github->GitHub
 glight->flight
 gnawwed->gnawed
 gnome->GNOME
