@@ -17,7 +17,7 @@ import github3
 wordDict = {}
 ignoreDict = {}
 checker = enchant.Dict("en_US")
-usage = "ERROR, INCORRECT USAGE: ./main.py [target_user] [target_repo]"
+usage = "ERROR, INCORRECT USAGE: ./main.py USER_OF_INTEREST REPO_OF_INTEREST [-t]"
 
 #Create Github object
 keys_file = open("../keys.txt")
@@ -25,12 +25,24 @@ USERNAME = keys_file.readline().rstrip() # put your github username here.
 PASSWORD = keys_file.readline().rstrip() # put your github password here.
 g = github3.login(USERNAME, PASSWORD)
 
-if (len(sys.argv) != 3):
+if (len(sys.argv) < 3 or len(sys.argv) > 4):
   print usage
   sys.exit()
   
 target_user = sys.argv[1]
 repo_name = sys.argv[2] 
+if (len(sys.argv) == 4):
+  debug_flag = sys.argv[3] 
+  if (debug_flag == "-t"):
+    debug_mode = True
+    print "Debug flag set"
+  else:
+    print usage
+    sys.exit()
+else:
+  debug_mode = False
+  print "Debug flag NOT set"
+  
 
 #Fork the repo of interest into github account
 target_repo = g.repository(target_user, repo_name)
