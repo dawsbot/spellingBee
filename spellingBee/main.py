@@ -25,11 +25,12 @@ USERNAME = keys_file.readline().rstrip() # put your github username here.
 PASSWORD = keys_file.readline().rstrip() # put your github password here.
 g = github3.login(USERNAME, PASSWORD)
 
-#Parse command line arguments
+#Check command line argument length
 if (len(sys.argv) < 3 or len(sys.argv) > 4):
   print usage
   sys.exit()
   
+#Parse command line arguments
 target_user = sys.argv[1]
 repo_name = sys.argv[2] 
 if (len(sys.argv) == 4):
@@ -44,7 +45,7 @@ else:
   debug_mode = False
   print "Debug flag NOT set"
 
-#Fork the repo of interest into github account
+#Fork the repo of interest into GitHub account
 target_repo = g.repository(target_user, repo_name)
 oldText = target_repo.readme().decoded
 
@@ -73,20 +74,24 @@ for word in splitUp:
       print "word is in ignoredict. word is ", word
       continue
     #Only replace if the replacement is mapped within words.txt
-    if (word in wordDict):
-      newText = re.sub(word, wordDict[word], newText)
-    else: #Allow user to input new word map
-      solution = raw_input("\n" + word + " unrecognized.\n1. i == add to ignore\n2. [word] == replacement for new mapping\n3. \'\' == none: ")
-      if (solution == '' or solution == ' '): #user does not want this mapped
-        continue
-      elif (solution == 'i'): #user wants to map new ignore
-        with open('../words/ignore.txt','a') as f: f.write(word + "\n")
-        ignoreDict[word] = 1 
-      else: #user wants to map new correction
-        with open('../words/words.txt','a') as f: f.write(word + "->" + solution + "\n")
-        wordDict[word] = solution
+    if (debug_mode):
+      if (word in wordDict):
         newText = re.sub(word, wordDict[word], newText)
-        
+      else: #Allow user to input new word map
+        solution = raw_input("\n" + word + " unrecognized.\n1. i == add to ignore\n2. [word] == replacement for new mapping\n3. \'\' == none: ")
+        if (solution == '' or solution == ' '): #user does not want this mapped
+          continue
+        elif (solution == 'i'): #user wants to map new ignore
+          with open('../words/ignore.txt','a') as f: f.write(word + "\n")
+          ignoreDict[word] = 1 
+        else: #user wants to map new correction
+          with open('../words/words.txt','a') as f: f.write(word + "->" + solution + "\n")
+          wordDict[word] = solution
+          newText = re.sub(word, wordDict[word], newText)
+    else:
+      if (word in wordDict):
+        newText = re.sub(word, wordDict[word], newText)
+
 print "Corrected version: \n", newText 
 if (oldText == newText):
   print "\nThere were no changes to be made!" 
@@ -108,7 +113,7 @@ f.close()
 
 process = subprocess.call("../spellingBee/spellingBee/gitItAll.sh", shell=True)
 
-target_repo.create_pull("Spelling Correction", "master", "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If the correction is correct, star the repo, if it is wrong, report an issue!")
+target_repo.create_pull("Spelling Correction from Dawson's Spelling Bee", "master", "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If the correction is correct, star the repo, if it is wrong, report an issue!")
 
 os.chdir("..")
 bashCommand = "rm -rf " + repo_name 
