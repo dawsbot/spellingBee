@@ -14,10 +14,10 @@ import subprocess
 import enchant
 import github3
 
+usage = "ERROR, INCORRECT USAGE: ./main.py USER_OF_INTEREST REPO_OF_INTEREST [-t]"
 wordDict = {}
 ignoreDict = {}
 checker = enchant.Dict("en_US")
-usage = "ERROR, INCORRECT USAGE: ./main.py USER_OF_INTEREST REPO_OF_INTEREST [-t]"
 
 #Create Github object
 keys_file = open("../keys.txt")
@@ -25,6 +25,7 @@ USERNAME = keys_file.readline().rstrip() # put your github username here.
 PASSWORD = keys_file.readline().rstrip() # put your github password here.
 g = github3.login(USERNAME, PASSWORD)
 
+#Parse command line arguments
 if (len(sys.argv) < 3 or len(sys.argv) > 4):
   print usage
   sys.exit()
@@ -42,14 +43,10 @@ if (len(sys.argv) == 4):
 else:
   debug_mode = False
   print "Debug flag NOT set"
-  
 
 #Fork the repo of interest into github account
 target_repo = g.repository(target_user, repo_name)
-#target_fork = target_repo.create_fork()
-
 oldText = target_repo.readme().decoded
-#myString = target_fork.readme().decoded
 
 #Fill replacement dictionary from file
 with open("../words/words.txt") as f:
@@ -63,9 +60,10 @@ with open("../words/ignore.txt") as f:
     ignoreDict[line.rstrip()] = 1 #Provide dictionary value of 1 (using dictionary for quick hashing)
 
 print "These are the contents in your README of interest:\n"
-
 print oldText
+
 newText = oldText #Create duplicate where corrections will be made
+
 splitUp = re.compile('\w+').findall(oldText)
 
 for word in splitUp:
