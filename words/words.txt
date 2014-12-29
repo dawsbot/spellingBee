@@ -464,7 +464,6 @@ apache->Apache
 aparent->apparent
 aparment->apartment
 apenines->apennines
-api->API
 aplication->application
 aplied->applied
 apolegetics->apologetics
@@ -4350,3 +4349,12 @@ cpyright->copyright
 Licenced->Licensed
 facbook->Facebook
 Facbook->Facebook
+criminalisation->criminalization
+functionallity->functionality
+ussing->using
+appeneded->appended
+requieres->requires
+whenver->whenever
+Admited->Admitted
+optinally->optionally
+convination->combination
