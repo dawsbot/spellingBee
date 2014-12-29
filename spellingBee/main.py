@@ -37,13 +37,13 @@ if (len(sys.argv) == 4):
   training_flag = sys.argv[3] 
   if (training_flag == "-t"):
     training_mode = True
-    print "Debug flag set"
+    print "Training flag set"
   else:
     print usage
     sys.exit()
 else:
   training_mode = False
-  print "Debug flag NOT set"
+  print "Training flag NOT set"
 
 #Fork the repo of interest into GitHub account
 target_repo = g.repository(target_user, repo_name)
@@ -60,8 +60,10 @@ with open("../words/ignore.txt") as f:
   for line in f:
     ignoreDict[line.rstrip()] = 1 #Provide dictionary value of 1 (using dictionary for quick hashing)
 
+'''
 print "These are the contents in your README of interest:\n"
 print oldText
+'''
 
 newText = oldText #Create duplicate where corrections will be made
 
@@ -69,9 +71,8 @@ splitUp = re.compile('\w+').findall(oldText)
 
 for word in splitUp:
   if (not checker.check(word)):
-    #print "contents of ignoreDict: ", ignoreDict
     if (word in ignoreDict): #Do not alert user if word is in ignore
-      print "word is in ignoredict. word is ", word
+      print "Word is in ignoredict. Word is ", word
       continue
     #Only replace if the replacement is mapped within words.txt
     if (training_mode):
@@ -92,7 +93,9 @@ for word in splitUp:
       if (word in wordDict):
         newText = re.sub(word, wordDict[word], newText)
 
+'''
 print "Corrected version: \n", newText 
+'''
 if (oldText == newText):
   print "\nThere were no changes to be made!" 
   sys.exit()
