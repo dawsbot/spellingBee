@@ -34,15 +34,15 @@ if (len(sys.argv) < 3 or len(sys.argv) > 4):
 target_user = sys.argv[1]
 repo_name = sys.argv[2] 
 if (len(sys.argv) == 4):
-  debug_flag = sys.argv[3] 
-  if (debug_flag == "-t"):
-    debug_mode = True
+  training_flag = sys.argv[3] 
+  if (training_flag == "-t"):
+    training_mode = True
     print "Debug flag set"
   else:
     print usage
     sys.exit()
 else:
-  debug_mode = False
+  training_mode = False
   print "Debug flag NOT set"
 
 #Fork the repo of interest into GitHub account
@@ -74,7 +74,7 @@ for word in splitUp:
       print "word is in ignoredict. word is ", word
       continue
     #Only replace if the replacement is mapped within words.txt
-    if (debug_mode):
+    if (training_mode):
       if (word in wordDict):
         newText = re.sub(word, wordDict[word], newText)
       else: #Allow user to input new word map
