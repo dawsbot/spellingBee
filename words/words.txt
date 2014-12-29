@@ -3951,6 +3951,9 @@ themslves->themselves
 ther->there
 therafter->thereafter
 therby->thereby
+moar->more
+teh->the
+gainz->gains
 theri->their
 theyre->they're
 thgat->that
@@ -3992,7 +3995,6 @@ tipe->type
 tipes->types
 tje->the
 tjhe->the
-tjpanishad->upanishad
 tkae->take
 tkaes->takes
 tkaing->taking
@@ -4044,8 +4046,6 @@ translater->translator
 translaters->translators
 transmissable->transmissible
 transporation->transportation
-tremelo->tremolo
-tremelos->tremolos
 triguered->triggered
 triology->trilogy
 troling->trolling
@@ -4175,15 +4175,15 @@ ususally->usually
 vaccum->vacuum
 vaccume->vacuum
 vacinity->vicinity
-vaguaries->vagaries
 vaieties->varieties
 vailidty->validity
-valetta->valletta
 valuble->valuable
 valueable->valuable
 varations->variations
 varient->variant
 variey->variety
+varity->variety
+variaty->variety
 varing->varying
 varities->varieties
 varity->variety
@@ -4195,6 +4195,7 @@ vegitables->vegetables
 vegtable->vegetable
 vehicule->vehicle
 vell->well
+wel->well
 venemous->venomous
 vengance->vengeance
 vengence->vengeance
@@ -4206,13 +4207,9 @@ versitilaty->versatility
 versitlity->versatility
 vetween->between
 veyr->very
-vigeur->vigueur
 vigilence->vigilance
 vigourous->vigorous
 villian->villain
-villification->vilification
-villify->vilify
-villin->villi
 vincinity->vicinity
 violentce->violence
 virtualy->virtually
@@ -4310,6 +4307,7 @@ worstened->worsened
 woudl->would
 wreot->wrote
 wresters->wrestlers
+wrester->wrestler
 wriet->write
 writen->written
 writn->written
@@ -4318,7 +4316,6 @@ wrok->work
 wroking->working
 wtih->with
 wupport->support
-xenophoby->xenophobia
 yaching->yachting
 yaer->year
 yaerly->yearly
@@ -4342,3 +4339,14 @@ ytou->you
 yuo->you
 zeebra->zebra
 labelling->labeling
+licenced->licensed
+licence->license
+Licence->License
+licensd->licensed
+copyrite->copyright
+Copyrite->Copyright
+Cpyright->Copyright
+cpyright->copyright
+Licenced->Licensed
+facbook->Facebook
+Facbook->Facebook
