@@ -71,18 +71,19 @@ splitUp = re.compile('\w+').findall(oldText)
 
 for word in splitUp:
   if (not checker.check(word)):
-    if (word in ignoreDict): #Do not alert user if word is in ignore
-      print "Word is in ignoredict. Word is ", word
-      continue
-    #Only replace if the replacement is mapped within words.txt
     if (training_mode):
       if (word in wordDict):
-        newText = re.sub(word, wordDict[word], newText)
+        #newText = re.sub(word, wordDict[word], newText)
+        newText = re.sub(r"\b%s\b" % word, wordDict[word], newText)
+        #newText.replace(word, wordDict[word])
+        print word, " replaced with ", wordDict[word], "!"
+      elif (word in ignoreDict): #Do not alert user if word is in ignore
+        continue
       else: #Allow user to input new word map
-        solution = raw_input("\n" + word + " unrecognized.\n1. i == add to ignore\n2. [word] == replacement for new mapping\n3. \'\' == none: ")
-        if (solution == '' or solution == ' '): #user does not want this mapped
+        solution = raw_input("\n" + word + " unrecognized.\n* \'\' == add to ignore\n* [word] == replacement for new mapping\n* i == continue w/no new mappings: ")
+        if (solution == 'i'): #user does not want this mapped
           continue
-        elif (solution == 'i'): #user wants to map new ignore
+        elif (solution == ''): #user wants to map new ignore
           with open('../words/ignore.txt','a') as f: f.write(word + "\n")
           ignoreDict[word] = 1 
         else: #user wants to map new correction

@@ -10,3 +10,5 @@ If the corrections suck, let **Dawson's Spelling Bee** know by posting an issue 
 ```words/words.txt``` is where all of the corrections are mapped. Feel free to pull request improvements to the word mapping file.
 
 Credit to [holdenk](https://github.com/holdenk) for the origin implementation in Perl available [here](https://github.com/holdenk/holdensmagicalunicorn)
+
+Licensed under MIT<br>Copyright 2014
