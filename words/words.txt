@@ -1933,7 +1933,6 @@ guttaral->guttural
 gutteral->guttural
 habaeus->habeas
 habeus->habeas
-hackathon->Hackathon
 hackbeanpot->HackBeanpot
 hackcu->HackCU
 haemorrage->haemorrhage
@@ -2029,7 +2028,6 @@ htikn->think
 hting->thing
 htink->think
 htis->this
-http->HTTP
 humer->humor
 humerous->humorous
 huminoid->humanoid
@@ -2562,7 +2560,6 @@ moleclues->molecules
 momento->memento
 monestaries->monasteries
 monestary->monastery
-mongodb->MongoDB
 monh->month
 monhs->months
 monickers->monikers
@@ -4358,3 +4355,12 @@ whenver->whenever
 Admited->Admitted
 optinally->optionally
 convination->combination
+coffe->coffee
+righ->right
+miliseconds->milliseconds
+effec->effect
+simplly->simply
+excutables->executables
+Excutable->Executable
+Developent->Development
+outputing->outputting
