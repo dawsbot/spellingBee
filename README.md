@@ -1,7 +1,9 @@
 spellingBee
 ============
 
-**spellingBee** is your new favorite tool to provide **Bangin' spell corrections for your GitHub READMEs**. Upon finding a mapped correction in  ```/spellingBee/words.txt```, **Dawson's Spelling Bee** forks, pushes spelling corrections to my fork, and pull requests these spelling suggestions right to your repo! 
+**spellingBee** is your new favorite tool to provide **Bangin' spell corrections for your GitHub READMEs**. Upon finding a mapped correction in  ```/spellingBee/words.txt```, **Dawson's Spelling Bee** pull requests your repo with your spelling erros corrected! 
+
+Currently this is local to my machine, so PM me if you want your repo spellingBee'd.
 
 If the corrections suck, let **Dawson's Spelling Bee** know by posting an issue [here](https://github.com/dawsonbotsford/spellingBee/issues), but if it reveals a spelling error useful to you, merge that shit! And then star the repo, it goes a long way to help me see my efforts are useful.
 
