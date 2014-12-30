@@ -1,7 +1,8 @@
 spellingBee
 ============
+:honeybee: :heavy_plus_sign: :octocat:
 
-**spellingBee** is your new favorite tool to provide **Bangin' spell corrections for your GitHub READMEs**. Upon finding a mapped correction in  ```/words/words.txt```, **Dawson's Spelling Bee** pull requests your repo the spelling errors corrected! 
+**spellingBee** is your new favorite tool to provide **bangin' spell corrections for your GitHub READMEs**. Upon finding a mapped correction in  ```/words/words.txt```, **Dawson's Spelling Bee** pull requests your repo the spelling errors corrected! 
 
 Currently this is local to my machine, so PM me if you want your repo spellingBee'd.
 
