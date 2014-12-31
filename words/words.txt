@@ -103,10 +103,6 @@ Nazereth->Nazareth
 Novermber->November
 Nullabour->Nullarbor
 Nuremburg->Nuremberg
-OCAML->OCaml
-Ocaml->OCaml
-OpenLdap->OpenLDAP
-Openldap->OpenLDAP
 Palistian->Palestinian
 Palistinian->Palestinian
 Palistinians->Palestinians
@@ -121,7 +117,6 @@ Phillippines->Philippines
 Phonecian->Phoenecian
 Portugese->Portuguese
 Postdam->Potsdam
-Postgresql->PostgreSQL
 Premonasterians->Premonstratensians
 Pucini->Puccini
 Puertorrican->Puerto Rican
@@ -4364,3 +4359,23 @@ excutables->executables
 Excutable->Executable
 Developent->Development
 outputing->outputting
+rpository->repository
+wher->where
+purposly->purposely
+sevral->several
+importat->important
+wordss->words
+mayy->may
+ot->to
+likn->link
+ULR->URL
+pytho->python
+nott->not
+delette->delete
+rast->rest
+si->is
+misspeled->misspelled
+sentance->sentence
+documention->documentation
+neccassery->necessary
+fitering->filtering
