@@ -60,14 +60,22 @@ with open("../words/ignore.txt") as f:
   for line in f:
     ignoreDict[line.rstrip()] = 1 #Provide dictionary value of 1 (using dictionary for quick hashing)
 
-'''
 print "These are the contents in your README of interest:\n"
 print oldText
-'''
 
 newText = oldText #Create duplicate where corrections will be made
 
-splitUp = re.compile('\w+').findall(oldText)
+#Remove URL's from text
+#oldText = re.sub(r'https?[^\s]*', '', oldText)
+'''
+p=re.compile(r'https?[S]*', re.DOTALL)
+re.sub(p, '', oldText)
+'''
+print "After removing URL's\n"
+print oldText
+
+#splitUp = re.compile('\w+').findall(oldText)
+splitUp = re.compile('\w+').findall(re.sub(r'https?[^\s]*', '', oldText))
 
 for word in splitUp:
   if (not checker.check(word)):
@@ -117,7 +125,7 @@ f.close()
 
 process = subprocess.call("../spellingBee/spellingBee/gitItAll.sh", shell=True)
 
-target_repo.create_pull("Spelling Correction from Dawson's Spelling Bee", "master", "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If the correction is correct, star the repo, if it is wrong, report an issue!")
+target_repo.create_pull("Spelling Correction from Dawson's Spelling Bee", target_repo.default_branch, "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If the correction is correct, star the repo, if it is wrong, report an issue!")
 
 os.chdir("..")
 bashCommand = "rm -rf " + repo_name 
