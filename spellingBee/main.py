@@ -66,15 +66,6 @@ print oldText
 newText = oldText #Create duplicate where corrections will be made
 
 #Remove URL's from text
-#oldText = re.sub(r'https?[^\s]*', '', oldText)
-'''
-p=re.compile(r'https?[S]*', re.DOTALL)
-re.sub(p, '', oldText)
-'''
-print "After removing URL's\n"
-print oldText
-
-#splitUp = re.compile('\w+').findall(oldText)
 splitUp = re.compile('\w+').findall(re.sub(r'https?[^\s]*', '', oldText))
 
 for word in splitUp:
@@ -92,10 +83,10 @@ for word in splitUp:
         if (solution == 'i'): #user does not want this mapped
           continue
         elif (solution == ''): #user wants to map new ignore
-          with open('../words/ignore.txt','a') as f: f.write(word + "\n")
+          with open('../words/ignore.txt','a') as f: f.write(word[:1].lower() + word[1:] + "\n" + word[:1].title() + word[1:] + "\n")
           ignoreDict[word] = 1 
         else: #user wants to map new correction
-          with open('../words/words.txt','a') as f: f.write(word + "->" + solution + "\n")
+          with open('../words/words.txt','a') as f: f.write(word[:1].lower() + word[1:] + "->" + solution[:1].lower() + solution[1:] + "\n" + word[:1].title() + word[1:] + "->" + solution[:1].title() + solution[1:] + "\n")
           wordDict[word] = solution
           newText = re.sub(word, wordDict[word], newText)
     else:

@@ -49,7 +49,6 @@ Galations->Galatians
 Gameboy->Game Boy
 Gconf->GConf
 Ghandi->Gandhi
-Github->GitHub
 Gnome->GNOME
 Gnome-VFS->GnomeVFS
 Gnome-Vfs->GnomeVFS
@@ -1860,7 +1859,6 @@ gaurd->guard
 gaurentee->guarantee
 gaurenteed->guaranteed
 gaurentees->guarantees
-gconf->GConf
 geneological->genealogical
 geneologies->genealogies
 geneology->genealogy
@@ -1871,8 +1869,6 @@ geographicial->geographical
 geometrician->geometer
 geometricians->geometers
 gerat->great
-german->German
-gitHub->GitHub
 glight->flight
 gnawwed->gnawed
 gnome->GNOME
@@ -2986,7 +2982,6 @@ possiblilty->possibility
 possiblities->possibilities
 possiblity->possibility
 possition->position
-postgresql->PostgreSQL
 posthomous->posthumous
 postion->position
 postive->positive
@@ -4372,6 +4367,8 @@ ULR->URL
 pytho->python
 nott->not
 delette->delete
+delet->delete
+delte->delete
 rast->rest
 si->is
 misspeled->misspelled
@@ -4379,3 +4376,5 @@ sentance->sentence
 documention->documentation
 neccassery->necessary
 fitering->filtering
+segementation->segmentation
+Segementation->Segmentation
