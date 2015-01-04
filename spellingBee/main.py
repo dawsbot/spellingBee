@@ -65,8 +65,8 @@ print oldText
 
 newText = oldText #Create duplicate where corrections will be made
 
-#Remove URL's from text
-splitUp = re.compile('\w+').findall(re.sub(r'https?[^\s]*', '', oldText))
+#Remove URL's and words that contain underscores from text
+splitUp = re.compile('\w+').findall(re.sub(r'\b\w*_\w*\b', '', re.sub(r'https?[^\s]*', '', oldText)))
 
 for word in splitUp:
   if (not checker.check(word)):
