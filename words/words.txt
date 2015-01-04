@@ -4336,7 +4336,6 @@ cpyright->copyright
 Licenced->Licensed
 facbook->Facebook
 Facbook->Facebook
-criminalisation->criminalization
 functionallity->functionality
 ussing->using
 appeneded->appended
@@ -4378,3 +4377,5 @@ neccassery->necessary
 fitering->filtering
 segementation->segmentation
 Segementation->Segmentation
+behaviour->behavior
+Behaviour->Behavior
