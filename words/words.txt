@@ -4379,3 +4379,5 @@ segementation->segmentation
 Segementation->Segmentation
 behaviour->behavior
 Behaviour->Behavior
+classifer->classifier
+Classifer->Classifier
