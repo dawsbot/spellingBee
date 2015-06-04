@@ -1,8 +1,5 @@
 Amercia->America
-Api->API
 Bernouilli->Bernoulli
-BitCoin->Bitcoin
-BitFinex->Bitfinex
 Blitzkreig->Blitzkrieg
 Bonnano->Bonanno
 Brasillian->Brazilian
@@ -4381,3 +4378,15 @@ behaviour->behavior
 Behaviour->Behavior
 classifer->classifier
 Classifer->Classifier
+thoose->those
+Thoose->Those
+excercised->exercised
+Excercised->Exercised
+cacheing->caching
+Cacheing->Caching
+mintues->minutes
+Mintues->Minutes
+retreival->retrieval
+Retreival->Retrieval
+currrency->currency
+Currrency->Currency

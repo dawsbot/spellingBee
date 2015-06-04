@@ -116,7 +116,7 @@ f.close()
 
 process = subprocess.call("../spellingBee/spellingBee/gitItAll.sh", shell=True)
 
-target_repo.create_pull("Spelling Correction from Dawson's Spelling Bee", target_repo.default_branch, "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If the correction is correct, star the repo, if it is wrong, report an issue!")
+target_repo.create_pull("Spelling Correction from Dawson's Spelling Bee", target_repo.default_branch, "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If the correction is useful, star me! Keep in mind, this is solely spelling updates for your README, it should not affect functionality.")
 
 os.chdir("..")
 bashCommand = "rm -rf " + repo_name 
