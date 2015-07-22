@@ -12,4 +12,4 @@ If the corrections suck, let **Dawson's Spelling Bee** know by posting an issue 
 
 Credit to [holdenk](https://github.com/holdenk) for the origin implementation in Perl available [here](https://github.com/holdenk/holdensmagicalunicorn)
 
-Licensed under MIT<br>Copyright 2014
+Licensed under MIT<br>Copyright 2014 - 2015
