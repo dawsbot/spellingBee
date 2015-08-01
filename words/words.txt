@@ -725,8 +725,6 @@ biginning->beginning
 bilateraly->bilaterally
 billingualism->bilingualism
 binominal->binomial
-bitCoin->Bitcoin
-bitcoin->Bitcoin
 bitfinex->Bitfinex
 bizzare->bizarre
 blaim->blame
@@ -4390,3 +4388,8 @@ retreival->retrieval
 Retreival->Retrieval
 currrency->currency
 Currrency->Currency
+ethre->ether
+etheream->ethereum
+etheruem->ethereum
+Etheream->Ethereum
+Etheruem->Ethereum
