@@ -4309,6 +4309,8 @@ yeras->years
 yersa->years
 yotub->youtube
 yotube->youtube
+yours'->yours
+your's->yours
 youseff->yousef
 youself->yourself
 youtub->youtube
@@ -4316,6 +4318,7 @@ youtueb->youtube
 yrea->year
 ytou->you
 yuo->you
+yuor->your
 zeebra->zebra
 labelling->labeling
 licenced->licensed
