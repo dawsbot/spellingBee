@@ -1,0 +1,14 @@
+arborigène->aborigène
+acceuil->accueil
+aggressif->agressif
+au jour d'aujourd'hui->aujourd'hui
+autant pour moi->au temps pour moi
+autrement plus->autrement
+aux dépends de->aux dépens de
+à l'envie->à l'envi
+ayant-droit->ayant droit
+ayant-cause->ayant cause
+ayant droits->ayants droits
+ayant causes->ayants causes
+ayant-droits->ayants droits
+ayant-causes->ayants causes
