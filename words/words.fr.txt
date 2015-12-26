@@ -12,3 +12,5 @@ ayant droits->ayants droits
 ayant causes->ayants causes
 ayant-droits->ayants droits
 ayant-causes->ayants causes
+malgré qu'-> bien qu'
+malgré que->malgré
