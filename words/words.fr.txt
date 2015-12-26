@@ -14,3 +14,39 @@ ayant-droits->ayants droits
 ayant-causes->ayants causes
 malgré qu'->bien qu'
 malgré que->malgré
+chiffre d'affaire->chiffre d'affaires
+compte-rendu->compte rendu
+procès verbal->procès-verbal
+debouts->debout
+depuis quelques temps-> depuis quelque temps
+de temps à autres->de temps à autre
+enjoler->enjôler
+enjôliver->enjoliver
+en son fort intérieur->en son for intérieur
+en temps que->en tant que
+etc...->etc.
+...etc->etc.
+être sur le grill->être sur le gril
+hormi->hormis
+parmis->parmi
+en navigant->en naviguant
+ocurrence->occurrence
+occurence->occurrence
+ocurence->occurrence
+partisante->partisane
+partisantes->partisanes
+réveil-matin->réveille-matin
+je vous en serais gré->je vous en saurais gré
+s'elle->si elle
+s'elles->si elles
+suite à->à la suite de
+scénette->saynète
+opprobe->opprobre
+c'est de la faute de->c'est la faute de
+c'est de ma faute->c'est ma faute
+faire bonne chair->faire bonne chère
+rénumérer->rémunérer
+un espèce de->une espèce de
+rez de chaussée->rez-de-chaussée
+raz-de-marée->raz de marée
+vinyl->vinyle
