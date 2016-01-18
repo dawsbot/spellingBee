@@ -4394,3 +4394,5 @@ etheream->ethereum
 etheruem->ethereum
 Etheream->Ethereum
 Etheruem->Ethereum
+amerian->american
+Amerian->American
