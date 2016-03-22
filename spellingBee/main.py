@@ -20,21 +20,20 @@ ignoreDict = {}
 checker = enchant.Dict("en_US")
 
 #Create Github object
-keys_file = open("../keys.txt")
-USERNAME = keys_file.readline().rstrip() # put your github username here.
-PASSWORD = keys_file.readline().rstrip() # put your github password here.
+USERNAME = os.environ.get('GH_USERNAME');
+PASSWORD = os.environ.get('GH_PASSWORD');
 g = github3.login(USERNAME, PASSWORD)
 
 #Check command line argument length
 if (len(sys.argv) < 3 or len(sys.argv) > 4):
   print usage
   sys.exit()
-  
+
 #Parse command line arguments
 target_user = sys.argv[1]
-repo_name = sys.argv[2] 
+repo_name = sys.argv[2]
 if (len(sys.argv) == 4):
-  training_flag = sys.argv[3] 
+  training_flag = sys.argv[3]
   if (training_flag == "-t"):
     training_mode = True
     print "Training flag set"
@@ -84,7 +83,7 @@ for word in splitUp:
           continue
         elif (solution == ''): #user wants to map new ignore
           with open('../words/ignore.txt','a') as f: f.write(word[:1].lower() + word[1:] + "\n" + word[:1].title() + word[1:] + "\n")
-          ignoreDict[word] = 1 
+          ignoreDict[word] = 1
         else: #user wants to map new correction
           with open('../words/words.txt','a') as f: f.write(word[:1].lower() + word[1:] + "->" + solution[:1].lower() + solution[1:] + "\n" + word[:1].title() + word[1:] + "->" + solution[:1].title() + solution[1:] + "\n")
           wordDict[word] = solution
@@ -94,10 +93,10 @@ for word in splitUp:
         newText = re.sub(word, wordDict[word], newText)
 
 '''
-print "Corrected version: \n", newText 
+print "Corrected version: \n", newText
 '''
 if (oldText == newText):
-  print "\nThere were no changes to be made!" 
+  print "\nThere were no changes to be made!"
   sys.exit()
 
 #Clone the target repo locally
@@ -119,7 +118,7 @@ process = subprocess.call("../spellingBee/spellingBee/gitItAll.sh", shell=True)
 target_repo.create_pull("Spelling Correction from Dawson's Spelling Bee", target_repo.default_branch, "dawsonbotsford:master", "Automated corrections from https://github.com/dawsonbotsford/spellingBee . If the correction is useful, star me! Keep in mind, this is solely spelling updates for your README, it should not affect functionality.")
 
 os.chdir("..")
-bashCommand = "rm -rf " + repo_name 
+bashCommand = "rm -rf " + repo_name
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 process.wait()
 
