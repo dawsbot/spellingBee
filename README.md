@@ -60,7 +60,7 @@ If I wanted to correct spelling on `dawsonbotsford`'s `inf` repo, I would run th
 
 The **spellingBee** is your new favorite tool to provide **bangin' spell corrections for your GitHub READMEs**. Upon finding a mapped correction in  ```words/words.txt```, the **Spelling Bee** pull requests your repo with the spelling errors corrected!
 
-If the corrections suck, let the **Spelling Bee** know by posting an issue [here](https://github.com/dawsonbotsford/spellingBee/issues), and if it reveals a spelling error useful to you, merge that shit! And then star the repo, it goes a long way to help me see my efforts are useful.
+If the corrections suck, let the **Spelling Bee** know by posting an issue [here](https://github.com/dawsonbotsford/spellingBee/issues), and if it reveals a spelling error useful to you, merge it! And then star the repo, it goes a long way to help me see my efforts are useful.
 
 ```words/words.txt``` is where all of the corrections are mapped. Feel free to pull request improvements to this file if you have a good mapping to add.
 
